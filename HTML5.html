@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Yin">
+        <title>HTML5 new elements</title>
+        <style>
+            fieldset {background: lightyellow;border:10px solid yellow;margin-bottom:10px;width:720px}
+            label {width: 180px;display:inline-block;text-align: right;vertical-align:top}
+            .autoWidth {width:auto}
+            .rangeSpan {text-align:center;vertical-align:top;display:inline-block; width:42px;height:18px;color:#FFFFFF}
+            .leftSpan {background:#800000}
+            .rightSpan {background:#990099}
+            textarea {width:360px;height:50px}
+            .autoWidth:hover, label:hover {font-size:28px}
+            select:hover,.input:hover {font-size:20px}
+        </style>
+    </head>
+    <body>
+        <h1>Please Enter Your Details For Our Dating Website!</h1>
+        <form method="post" enctype="multipart/form-data" 
+            action="https://www.ihome.ust.hk/~rossiter/cgi-bin/show_everything.php">
+	        <fieldset>
+		        <legend>Your Face</legend>
+		        <label for="fileToUpload">Your image:</label>
+		        <input type="file" id="fileToUpload" name="fileToUpload" class="input" required><br>
+		        <label for="preview">Image preview:</label>
+		        <img id="preview" name="preview" />		
+	        </fieldset>
+
+	        <fieldset>
+		        <legend>Your General Details</legend>
+		        <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" class="input" required><br>
+                <label for="gender">Gender:</label>
+                <input type="radio" name="gender" value="Male" required><span class="autoWidth">Male</span> 
+                <input type="radio" name="gender" value="Female" required><span class="autoWidth">Female</span><br>
+                <label for="age">Age:</label>
+                <input type="number" min="0" max="99" step="1" value="18" id="age" name="age" class="input" required><br>
+                <label for="birthday">Date of birth:</label>
+                <input type="date" id="birthday" name="birthday" size="20" class="input"><br>
+                <label for="color">Favorite color:</label>
+                <input type="color" id="color" name="color"><br>
+                <label for="country">Which country:</label>
+                <select name="country">
+                    <option value=""></option>
+		            <option value="ch">China</option>
+		            <option value="usa">United State</option>
+		            <option value="uk">United Kingdom</option>
+		            <option value="jp">Japan</option>
+		            <option value="rs">Russia</option>
+	            </select>
+	        </fieldset>
+
+	        <fieldset>
+		        <legend>Your Indicators</legend>
+		        <label for="height">Height:</label>
+		        <span class="rangeSpan leftSpan">Short</span><input type="range" min="0" max="100" step="5" value="50" id="height" name="height"><span class="rangeSpan rightSpan">Tall</span><br>
+		        <label for="salary">Salary:</label>
+		        <span class="rangeSpan leftSpan">Poor</span><input type="range" min="0" max="100" step="5" value="50" id="salary" name="salary"><span class="rangeSpan rightSpan">Rich</span><br>	
+	        </fieldset>
+
+	        <fieldset>
+		        <legend>Your Contact Information</legend>
+		        <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="input" required><br>
+                <label for="mobile">Mobile:</label>
+                <input type="tel" id="mobile" name="mobile" class="input"><br>
+                <label for="address">Address:</label>
+                <textarea rows="3" cols="60" name="address" ></textarea><br>
+                <label for="contact" class="autoWidth">Method to contact you:</label>
+                <input type="checkbox" name="contact" value="Email"><span class="autoWidth">Email</span>
+                <input type="checkbox" name="contact" value="Whatsapp"><span class="autoWidth">Whatsapp</span> 
+                <input type="checkbox" name="contact" value="In-app chat"><span class="autoWidth">In-app chat</span>
+	        </fieldset>
+	        <input type="submit" value="Submit">
+        </form>
+        <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+    </body>
+</html>
